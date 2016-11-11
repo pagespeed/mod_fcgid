@@ -404,7 +404,7 @@ handle_request_ipc(request_rec *r, int role,
     if ((rv = ap_pass_brigade(r->output_filters,
                               brigade_stdout)) != APR_SUCCESS) {
         if (r->connection->aborted) {
-            ap_log_rerror(APLOG_MARK, APLOG_TRACE1, rv, r,
+            ap_log_rerror(APLOG_MARK, APLOG_DEBUG, rv, r,
                       "mod_fcgid: ap_pass_brigade failed "
                       "(client aborted connection)");
             return OK;
